@@ -1,0 +1,41 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    container_name: freetime-api
+    ports:
+      - "8000:8000"
+    environment:
+      SMTP_HOST: mail
+      SMTP_PORT: 1025
+      JWT_SECRET: freetime1985
+    volumes:
+      - freetime-data:/data
+    depends_on:
+      - mail
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request;urllib.request.urlopen('http://localhost:8000/api/health')"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+    container_name: freetime-web
+    ports:
+      - "3000:80"
+    depends_on:
+      - api
+
+  mail:
+    image: mailhog/mailhog
+    container_name: freetime-mail-server
+    ports:
+      - "8025:8025"
+      - "1025:1025"
+
+volumes:
+  freetime-data:

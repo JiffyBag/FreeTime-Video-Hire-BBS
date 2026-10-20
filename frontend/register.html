@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Register - FreeTime Video Hire BBS</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="crt">
+  <nav>
+    <a href="index.html">[FreeTime Video Hire BBS]</a>
+    <a href="index.html">[Movies]</a>
+    <a href="register.html">[Register]</a>
+    <a href="http://localhost:8025" target="_blank">[MailBox:8025]</a>
+    <a href="admin.html">[Admin]</a>
+  </nav>
+
+  <div class="panel">
+    <h2>&gt; JOIN FREETIME_</h2>
+    <label>Username</label>
+    <input id="reg-username" placeholder="username">
+    <label>Email</label>
+    <input id="reg-email" placeholder="you@example.com">
+    <label>Password</label>
+    <input id="reg-password" type="password" placeholder="password">
+    <label>Confirm Password</label>
+    <input id="reg-confirm" type="password" placeholder="confirm password">
+    <button onclick="doRegister()">JOIN FREETIME</button>
+    <p id="reg-msg" class="msg"></p>
+    <p class="hint">Already a member? <a href="index.html" style="color:#ffcc33">Login here</a></p>
+  </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

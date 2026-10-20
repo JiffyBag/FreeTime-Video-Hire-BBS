@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Forgot Password - FreeTime Video Hire BBS</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="crt">
+  <nav>
+    <a href="index.html">[FreeTime Video Hire BBS]</a>
+    <a href="index.html">[Movies]</a>
+    <a href="register.html">[Register]</a>
+    <a href="http://localhost:8025" target="_blank">[MailBox:8025]</a>
+    <a href="admin.html">[Admin]</a>
+  </nav>
+
+  <div class="panel">
+    <h2>&gt; FORGOT PASSWORD_</h2>
+    <label>Email</label>
+    <input id="forgot-email" placeholder="you@example.com">
+    <button onclick="doForgot()">SEND RESET LINK</button>
+    <p id="forgot-msg" class="msg"></p>
+    <p class="hint">Check FreeTime Mail Server at
+      <a href="http://localhost:8025" target="_blank" style="color:#ffcc33">http://localhost:8025</a>
+      for your reset link.</p>
+  </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

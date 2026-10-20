@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin - FreeTime Video Hire BBS</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="crt">
+  <nav>
+    <a href="index.html">[FreeTime Video Hire BBS]</a>
+    <a href="index.html">[Movies]</a>
+    <a href="register.html">[Register]</a>
+    <a href="http://localhost:8025" target="_blank">[MailBox:8025]</a>
+    <a href="admin.html">[Admin]</a>
+  </nav>
+
+  <div id="admin-denied" class="panel hidden">
+    <h2>&gt; ACCESS DENIED (frontend check only)_</h2>
+    <p>Your account isn't flagged admin in the UI. Note: the frontend hiding this
+       page is NOT real security — the API endpoints behind it only check the
+       JWT payload, never a server-side role lookup. That's the lab bug.</p>
+    <p><a href="index.html" style="color:#ffcc33">Back to catalog</a></p>
+  </div>
+
+  <div id="admin-screen" class="panel hidden">
+    <h2>&gt; SYSOP CONTROL PANEL_</h2>
+
+    <h2>User Management</h2>
+    <table id="users-table"><thead><tr><th>ID</th><th>Username</th><th>Email</th><th>Balance</th><th>Admin</th><th></th></tr></thead><tbody></tbody></table>
+    <label>Add New Account</label>
+    <input id="nu-username" placeholder="username">
+    <input id="nu-email" placeholder="email">
+    <input id="nu-password" type="password" placeholder="password">
+    <input id="nu-balance" type="number" placeholder="starting balance" value="5">
+    <label><input type="checkbox" id="nu-admin" style="width:auto"> is_admin</label>
+    <button onclick="adminAddUser()">ADD ACCOUNT</button>
+
+    <hr class="sep">
+
+    <h2>Movie Stock</h2>
+    <table id="movies-table"><thead><tr><th>ID</th><th>Title</th><th>Stock</th><th>Restock</th></tr></thead><tbody></tbody></table>
+    <label>Add New Movie</label>
+    <input id="nm-title" placeholder="title">
+    <input id="nm-year" type="number" placeholder="year">
+    <input id="nm-genre" placeholder="genre">
+    <input id="nm-price" type="number" step="0.01" placeholder="rental price" value="2.00">
+    <button onclick="adminAddMovie()">ADD MOVIE</button>
+
+    <hr class="sep">
+
+    <h2>Snack Stock</h2>
+    <table id="snacks-table"><thead><tr><th>ID</th><th>Name</th><th>Stock</th><th>Restock</th></tr></thead><tbody></tbody></table>
+
+    <p id="admin-msg" class="msg"></p>
+  </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
