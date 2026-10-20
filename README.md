@@ -29,7 +29,7 @@ No Python, no Node, no venv, no manual DB or mail setup.
 ## Quickstart
 
 ```bash
-git clone <repo-url> freetime-video-bbs
+git clone https://github.com/JiffyBag/FreeTime-Video-Hire-BBS
 cd freetime-video-bbs
 ./start.sh
 ```
